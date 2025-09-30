@@ -8,13 +8,15 @@ sources = {
 }
 
 regexes = {
-    "https://fr.wiktionary.org/w/index.php?search=": re.compile(r"\"Prononciation API\">(.+?)<\/span>")
+    "https://fr.wiktionary.org/w/index.php?search=": re.compile(r"\"Prononciation API\">(.+?)</span>"),
+    "https://de.wiktionary.org/w/index.php?search=": re.compile(r"class=\"ipa\".*?>(.+?)</span>")
 }
 
 
 def search(url, regex):
     response = requests.get(url)
     try:
+        # print(response.text)
         found = regex.search(response.text)[1]
         return found.replace("\\", "").replace("/", "")
     except:
@@ -23,9 +25,7 @@ def search(url, regex):
 
 def lookup(word, language):
     for url in sources[language]:
-        print(url + word)
         regex = regexes[url]
-        print(regex)
         scrape = search(url + word, regex)
         if scrape and len(scrape) > 0:
             return(scrape)
