@@ -1,3 +1,4 @@
+import epitran
 import re
 import requests
 import sys
@@ -44,10 +45,21 @@ def main(filename, language):
     )
 
 
+def epitran_process(source: str, lang_code: str) -> str:
+    epi = epitran.Epitran(lang_code)
+    output = epi.transliterate(source)
+    print(output)
+    return output
+
+
 if __name__ == "__main__":
     try:
         filename = sys.argv[1]
         language = sys.argv[2]
 
     except:
-        print("Enter a word and its language")
+        print("Enter a string")
+        source = input()
+        print("Enter its language code")
+        language = input()
+        epitran_process(source, language)
