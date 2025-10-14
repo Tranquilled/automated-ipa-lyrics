@@ -7,17 +7,17 @@ authors = [
 ]
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = [
-    "click (>=8.2.1,<9.0.0)",
-    "jsonlines (>=4.0.0,<5.0.0)",
-    "ipdb (>=0.13.13,<0.14.0)",
-    "nltk (>=3.9.1,<4.0.0)",
-    "epitran (>=1.26.0,<2.0.0)",
-    "wikipron (>=1.3.3,<2.0.0)"
-]
 
 [tool.poetry]
 packages = [{include = "automated_ipa_lyrics", from = "src"}]
+
+[tool.poetry.dependencies]
+jsonlines = ">=4.0.0,<5.0.0"
+ipdb = ">=0.13.13,<0.14.0"
+nltk = ">=3.9.1,<4.0.0"
+click = ">=8.2.1,<9.0.0"
+epitran = ">=1.26.0,<2.0.0"
+wikipron = {path = "../wikipron", develop = true}
 
 
 [build-system]

@@ -28,4 +28,4 @@ All languages have idiosyncratic features that defy simple search-and-replace: t
 So while the [basic IPA chart](https://en.wikipedia.org/wiki/Help:IPA/Czech) is of great help to anyone trying to actually learn a language, it's insufficient for automated transcription.
 
 Thankfully, the Wikimedia project has also collected reams of IPA transcriptions of words.
-These can be used to get a more accurate search-and-replace, that recognizes "women" as a single block corresponding to \wɪmɪn\ rather than 6 characters pronounced \womɛn\ ("woe-men").Z
+These can be used to get a more accurate search-and-replace, that recognizes "women" as a single block corresponding to \wɪmɪn\ rather than 6 characters pronounced \womɛn\ ("woe-men").
